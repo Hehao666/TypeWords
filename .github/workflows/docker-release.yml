@@ -2,7 +2,7 @@ name: Docker Release
 
 on:
   push:
-    tags:
+标签:
       - 'v*'
   workflow_dispatch:
 
@@ -45,7 +45,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ steps.image-name.outputs.IMAGE_NAME }}
-          tags: |
+标签: |
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -57,9 +57,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64
+          platforms: linux/arm64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+标签: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
