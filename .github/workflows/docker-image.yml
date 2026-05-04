@@ -1,29 +1,29 @@
-name: Build ARM64 Docker Image
+name: Docker Image CI
 
 on:
   push:
-分支: [ "master" ]
+    branches: [ "master" ]
   pull_request:
-分支: [ "master" ]
+    branches: [ "master" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      
-      - name: Build ARM64 image
-        run: |
-          docker buildx build \
-            --platform linux/arm64 \
-            -t your-image-name:latest \
-            --load \
-            .
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    
+    - name: Build ARM64 image
+      run: |
+        docker buildx build \
+          --platform linux/arm64 \
+          -t my-image-name:latest \
+          --load \
+          .
