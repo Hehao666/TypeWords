@@ -2,8 +2,8 @@ name: Docker Release
 
 on:
   push:
-标签:
-  - 'v*'
+    标签:
+      - 'v*'
   workflow_dispatch:
 
 env:
