@@ -21,7 +21,6 @@ FROM nginx:alpine
 # Copy built application from builder
 COPY --from=builder /app/apps/nuxt/.output/public /usr/share/nginx/html
 
-# Expose port
 EXPOSE 80
 
 # Start the application
