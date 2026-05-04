@@ -5,7 +5,7 @@ on:
   push:
     branches: [ "master" ]
     tags: [ "v*" ]  # 匹配 v 开头的标签，如 v1.0.0
-
+    
 jobs:
   build-and-push:
     runs-on: ubuntu-latest  # 使用 Ubuntu 环境
