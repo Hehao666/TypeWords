@@ -24,7 +24,7 @@ jobs:
         id: image-name
         run: |
           DOCKER_USER="${{ vars.DOCKER_USERNAME || github.repository_owner }}"
-          IMAGE_NAME="${DOCKER_USER}/typeword"
+          IMAGE_NAME="${DOCKER_USER}/typewords"
           echo "IMAGE_NAME=${IMAGE_NAME}" >> $GITHUB_OUTPUT
           echo "Using Docker image: ${IMAGE_NAME}"
 
