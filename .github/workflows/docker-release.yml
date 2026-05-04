@@ -3,7 +3,7 @@ name: Docker Release
 on:
   push:
 标签:
-      - 'v*'
+  - 'v*'
   workflow_dispatch:
 
 env:
